@@ -17,6 +17,17 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // ---- Verwachte uitkomst: 6
 
 
+let cumLaudeNr = 0
+
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 8){
+       cumLaudeNr++;
+    }
+}
+
+console.log(cumLaudeNr);
+
+
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array met eindcijfers willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -28,9 +39,28 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
 
+function cumLaude(studentGradesArray){
+    cumLaudeNr = 0;
+
+    for (let i = 0; i < studentGradesArray.length; i++) {
+        if (studentGradesArray[i] >= 8){
+            cumLaudeNr++;
+        }
+    }
+
+    return cumLaudeNr;
+}
+
+const batchOne = cumLaude(grades);
+
+const batchTwo = cumLaude([6, 4, 5]);
+
+const batchThree = cumLaude([8, 9, 4, 6, 10]);
+
+console.log(batchOne, batchTwo, batchThree);
 
 
-/* Opdracht  2: Gemiddeld cijfer */
+/* Opdracht 2: Gemiddeld cijfer */
 
 /* 2a: Script schrijven  */
 // De studenten-administratie moet ieder blok opnieuw berekenen wat het gemiddelde eindcijfer is, maar we beginnen met de grades array van hierboven.
@@ -41,6 +71,28 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
+
+
+
+function calculateAverage(gradesListArray){
+
+    let gradesTotal = 0
+
+    for (let i = 0; i < gradesListArray.length; i++) {
+        gradesTotal = gradesTotal + gradesListArray[i];
+    }
+
+    return gradesTotal / gradesListArray.length;
+}
+
+const averageBatchOne = calculateAverage(grades);
+
+const averageBatchTwo = calculateAverage([6, 4, 5]);
+
+const averageBatchThree = calculateAverage([8, 9, 4, 6, 10]);
+
+
+console.log(averageBatchOne, averageBatchTwo, averageBatchThree);
 
 
 /* 2b: Omschrijven tot een herbruikbare functie */
@@ -59,6 +111,7 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Tip: Google is your best friend!
 
 
+console.log(Math.round(averageBatchOne * 10) / 10, Math.round(averageBatchTwo * 10) / 10, Math.round(averageBatchThree * 10) / 10);
 
 
 /* Bonusopdracht: hoogste cijfer */
