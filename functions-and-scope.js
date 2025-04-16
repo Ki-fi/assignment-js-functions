@@ -52,9 +52,7 @@ function cumLaude(studentGradesArray){
 }
 
 const batchOne = cumLaude(grades);
-
 const batchTwo = cumLaude([6, 4, 5]);
-
 const batchThree = cumLaude([8, 9, 4, 6, 10]);
 
 console.log(batchOne, batchTwo, batchThree);
@@ -86,11 +84,8 @@ function calculateAverage(gradesListArray){
 }
 
 const averageBatchOne = calculateAverage(grades);
-
 const averageBatchTwo = calculateAverage([6, 4, 5]);
-
 const averageBatchThree = calculateAverage([8, 9, 4, 6, 10]);
-
 
 console.log(averageBatchOne, averageBatchTwo, averageBatchThree);
 
@@ -135,3 +130,4 @@ console.log(Math.round(averageBatchOne * 10) / 10, Math.round(averageBatchTwo * 
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
